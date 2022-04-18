@@ -1,0 +1,7 @@
+{
+  "name": "SoftworksHRM",
+  "version": "0.1.0",
+  "description": "REST api docs",
+  "title": "SoftworksHRM : REST api docs",
+  "url" : "https://{your-orangehrm-host}/api/v1"
+}

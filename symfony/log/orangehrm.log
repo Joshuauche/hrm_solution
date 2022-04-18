@@ -1,0 +1,553 @@
+[04-Apr-2022 23:16:19 UTC] PHP Parse error:  syntax error, unexpected '<' in /var/www/html/orangehrm/symfony/plugins/orangehrmBeaconPlugin/modules/communication/templates/_beaconAbout.php on line 20
+[04-Apr-2022 23:16:24 UTC] PHP Parse error:  syntax error, unexpected '<' in /var/www/html/orangehrm/symfony/plugins/orangehrmBeaconPlugin/modules/communication/templates/_beaconAbout.php on line 20
+Tue 05 Apr 2022 07:18:28 AM UTC,841 [114614] ERROR filter.ExceptionCatcherFilter - Uncaught Exception: Doctrine_Connection_Mysql_Exception: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '2022-04-05 07:18:28am' for column `orangehrm_db`.`ohrm_employee_event`.`created_date` at row 1 in /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection.php:1090
+Stack trace:
+#0 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection/Statement.php(284): Doctrine_Connection->rethrowException(Object(PDOException), Object(Doctrine_Connection_Statement))
+#1 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection.php(1050): Doctrine_Connection_Statement->execute(Array)
+#2 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection.php(695): Doctrine_Connection->exec('INSERT INTO ohr...', Array)
+#3 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection/UnitOfWork.php(647): Doctrine_Connection->insert(Object(EmployeeEventTable), Array)
+#4 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection/UnitOfWork.php(571): Doctrine_Connection_UnitOfWork->processSingleInsert(Object(EmployeeEvent))
+#5 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection/UnitOfWork.php(81): Doctrine_Connection_UnitOfWork->insert(Object(EmployeeEvent))
+#6 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Record.php(1718): Doctrine_Connection_UnitOfWork->saveGraph(Object(EmployeeEvent))
+#7 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/dao/EmployeeEventDao.php(33): Doctrine_Record->save()
+#8 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/service/EmployeeEventService.php(63): EmployeeEventDao->saveEmployeeEvent(Object(EmployeeEvent))
+#9 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/service/EmployeeEventService.php(84): EmployeeEventService->saveEmployeeEvent(Object(EmployeeEvent))
+#10 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/modules/pim/actions/viewPersonalDetailsAction.class.php(92): EmployeeEventService->saveEvent('1', 'employee', 'UPDATE', 'Updating Employ...', NULL)
+#11 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(971): viewPersonalDetailsAction->execute(Object(sfWebRequest))
+#12 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/filter/orangehrmExecutionFilter.php(42): sfExecutionFilter->executeAction(Object(viewPersonalDetailsAction))
+#13 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(966): orangehrmExecutionFilter->executeAction(Object(viewPersonalDetailsAction))
+#14 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(952): sfExecutionFilter->handleAction(Object(sfFilterChain), Object(viewPersonalDetailsAction))
+#15 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfExecutionFilter->execute(Object(sfFilterChain))
+#16 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/filter/sfCommonFilter.class.php(29): sfFilterChain->execute()
+#17 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfCommonFilter->execute(Object(sfFilterChain))
+#18 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/filter/orangehrmPostExecutionFilter.php(22): sfFilterChain->execute()
+#19 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): orangehrmPostExecutionFilter->execute(Object(sfFilterChain))
+#20 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/ModuleFilter.php(56): sfFilterChain->execute()
+#21 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ModuleFilter->execute(Object(sfFilterChain))
+#22 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/authorization/filter/ohrmAuthorizationFilter.php(101): sfFilterChain->execute()
+#23 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ohrmAuthorizationFilter->execute(Object(sfFilterChain))
+#24 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/SessionInfoFetcherFilter.php(67): sfFilterChain->execute()
+#25 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): SessionInfoFetcherFilter->execute(Object(sfFilterChain))
+#26 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/OrangeI18NFilter.php(58): sfFilterChain->execute()
+#27 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): OrangeI18NFilter->execute(Object(sfFilterChain))
+#28 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/ExceptionCatcherFilter.php(26): sfFilterChain->execute()
+#29 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ExceptionCatcherFilter->execute(Object(sfFilterChain))
+#30 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/filter/sfBasicSecurityFilter.class.php(72): sfFilterChain->execute()
+#31 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfBasicSecurityFilter->execute(Object(sfFilterChain))
+#32 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1013): sfFilterChain->execute()
+#33 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfRenderingFilter->execute(Object(sfFilterChain))
+#34 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(687): sfFilterChain->execute()
+#35 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(2782): sfController->forward('pim', 'viewPersonalDet...')
+#36 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/util/sfContext.class.php(173): sfFrontWebController->dispatch()
+#37 /var/www/html/orangehrm/symfony/web/index.php(22): sfContext->dispatch()
+#38 {main}
+
+Next DaoException: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '2022-04-05 07:18:28am' for column `orangehrm_db`.`ohrm_employee_event`.`created_date` at row 1 in /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/dao/EmployeeEventDao.php:36
+Stack trace:
+#0 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/service/EmployeeEventService.php(63): EmployeeEventDao->saveEmployeeEvent(Object(EmployeeEvent))
+#1 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/service/EmployeeEventService.php(84): EmployeeEventService->saveEmployeeEvent(Object(EmployeeEvent))
+#2 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/modules/pim/actions/viewPersonalDetailsAction.class.php(92): EmployeeEventService->saveEvent('1', 'employee', 'UPDATE', 'Updating Employ...', NULL)
+#3 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(971): viewPersonalDetailsAction->execute(Object(sfWebRequest))
+#4 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/filter/orangehrmExecutionFilter.php(42): sfExecutionFilter->executeAction(Object(viewPersonalDetailsAction))
+#5 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(966): orangehrmExecutionFilter->executeAction(Object(viewPersonalDetailsAction))
+#6 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(952): sfExecutionFilter->handleAction(Object(sfFilterChain), Object(viewPersonalDetailsAction))
+#7 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfExecutionFilter->execute(Object(sfFilterChain))
+#8 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/filter/sfCommonFilter.class.php(29): sfFilterChain->execute()
+#9 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfCommonFilter->execute(Object(sfFilterChain))
+#10 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/filter/orangehrmPostExecutionFilter.php(22): sfFilterChain->execute()
+#11 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): orangehrmPostExecutionFilter->execute(Object(sfFilterChain))
+#12 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/ModuleFilter.php(56): sfFilterChain->execute()
+#13 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ModuleFilter->execute(Object(sfFilterChain))
+#14 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/authorization/filter/ohrmAuthorizationFilter.php(101): sfFilterChain->execute()
+#15 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ohrmAuthorizationFilter->execute(Object(sfFilterChain))
+#16 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/SessionInfoFetcherFilter.php(67): sfFilterChain->execute()
+#17 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): SessionInfoFetcherFilter->execute(Object(sfFilterChain))
+#18 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/OrangeI18NFilter.php(58): sfFilterChain->execute()
+#19 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): OrangeI18NFilter->execute(Object(sfFilterChain))
+#20 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/ExceptionCatcherFilter.php(26): sfFilterChain->execute()
+#21 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ExceptionCatcherFilter->execute(Object(sfFilterChain))
+#22 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/filter/sfBasicSecurityFilter.class.php(72): sfFilterChain->execute()
+#23 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfBasicSecurityFilter->execute(Object(sfFilterChain))
+#24 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1013): sfFilterChain->execute()
+#25 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfRenderingFilter->execute(Object(sfFilterChain))
+#26 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(687): sfFilterChain->execute()
+#27 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(2782): sfController->forward('pim', 'viewPersonalDet...')
+#28 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/util/sfContext.class.php(173): sfFrontWebController->dispatch()
+#29 /var/www/html/orangehrm/symfony/web/index.php(22): sfContext->dispatch()
+#30 {main}
+[05-Apr-2022 07:18:29 UTC] Empty module and/or action after parsing the URL "/webres_598bd8c4489f52.47381308/themes/default/images/error-btn.png" (/).
+Tue 05 Apr 2022 07:18:37 AM UTC,099 [114612] ERROR filter.ExceptionCatcherFilter - Uncaught Exception: Doctrine_Connection_Mysql_Exception: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '2022-04-05 07:18:37am' for column `orangehrm_db`.`ohrm_employee_event`.`created_date` at row 1 in /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection.php:1090
+Stack trace:
+#0 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection/Statement.php(284): Doctrine_Connection->rethrowException(Object(PDOException), Object(Doctrine_Connection_Statement))
+#1 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection.php(1050): Doctrine_Connection_Statement->execute(Array)
+#2 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection.php(695): Doctrine_Connection->exec('INSERT INTO ohr...', Array)
+#3 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection/UnitOfWork.php(647): Doctrine_Connection->insert(Object(EmployeeEventTable), Array)
+#4 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection/UnitOfWork.php(571): Doctrine_Connection_UnitOfWork->processSingleInsert(Object(EmployeeEvent))
+#5 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection/UnitOfWork.php(81): Doctrine_Connection_UnitOfWork->insert(Object(EmployeeEvent))
+#6 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Record.php(1718): Doctrine_Connection_UnitOfWork->saveGraph(Object(EmployeeEvent))
+#7 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/dao/EmployeeEventDao.php(33): Doctrine_Record->save()
+#8 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/service/EmployeeEventService.php(63): EmployeeEventDao->saveEmployeeEvent(Object(EmployeeEvent))
+#9 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/service/EmployeeEventService.php(84): EmployeeEventService->saveEmployeeEvent(Object(EmployeeEvent))
+#10 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/modules/pim/actions/viewPersonalDetailsAction.class.php(92): EmployeeEventService->saveEvent('1', 'employee', 'UPDATE', 'Updating Employ...', NULL)
+#11 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(971): viewPersonalDetailsAction->execute(Object(sfWebRequest))
+#12 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/filter/orangehrmExecutionFilter.php(42): sfExecutionFilter->executeAction(Object(viewPersonalDetailsAction))
+#13 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(966): orangehrmExecutionFilter->executeAction(Object(viewPersonalDetailsAction))
+#14 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(952): sfExecutionFilter->handleAction(Object(sfFilterChain), Object(viewPersonalDetailsAction))
+#15 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfExecutionFilter->execute(Object(sfFilterChain))
+#16 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/filter/sfCommonFilter.class.php(29): sfFilterChain->execute()
+#17 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfCommonFilter->execute(Object(sfFilterChain))
+#18 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/filter/orangehrmPostExecutionFilter.php(22): sfFilterChain->execute()
+#19 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): orangehrmPostExecutionFilter->execute(Object(sfFilterChain))
+#20 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/ModuleFilter.php(56): sfFilterChain->execute()
+#21 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ModuleFilter->execute(Object(sfFilterChain))
+#22 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/authorization/filter/ohrmAuthorizationFilter.php(101): sfFilterChain->execute()
+#23 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ohrmAuthorizationFilter->execute(Object(sfFilterChain))
+#24 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/SessionInfoFetcherFilter.php(67): sfFilterChain->execute()
+#25 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): SessionInfoFetcherFilter->execute(Object(sfFilterChain))
+#26 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/OrangeI18NFilter.php(58): sfFilterChain->execute()
+#27 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): OrangeI18NFilter->execute(Object(sfFilterChain))
+#28 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/ExceptionCatcherFilter.php(26): sfFilterChain->execute()
+#29 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ExceptionCatcherFilter->execute(Object(sfFilterChain))
+#30 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/filter/sfBasicSecurityFilter.class.php(72): sfFilterChain->execute()
+#31 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfBasicSecurityFilter->execute(Object(sfFilterChain))
+#32 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1013): sfFilterChain->execute()
+#33 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfRenderingFilter->execute(Object(sfFilterChain))
+#34 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(687): sfFilterChain->execute()
+#35 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(2782): sfController->forward('pim', 'viewPersonalDet...')
+#36 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/util/sfContext.class.php(173): sfFrontWebController->dispatch()
+#37 /var/www/html/orangehrm/symfony/web/index.php(22): sfContext->dispatch()
+#38 {main}
+
+Next DaoException: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '2022-04-05 07:18:37am' for column `orangehrm_db`.`ohrm_employee_event`.`created_date` at row 1 in /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/dao/EmployeeEventDao.php:36
+Stack trace:
+#0 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/service/EmployeeEventService.php(63): EmployeeEventDao->saveEmployeeEvent(Object(EmployeeEvent))
+#1 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/service/EmployeeEventService.php(84): EmployeeEventService->saveEmployeeEvent(Object(EmployeeEvent))
+#2 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/modules/pim/actions/viewPersonalDetailsAction.class.php(92): EmployeeEventService->saveEvent('1', 'employee', 'UPDATE', 'Updating Employ...', NULL)
+#3 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(971): viewPersonalDetailsAction->execute(Object(sfWebRequest))
+#4 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/filter/orangehrmExecutionFilter.php(42): sfExecutionFilter->executeAction(Object(viewPersonalDetailsAction))
+#5 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(966): orangehrmExecutionFilter->executeAction(Object(viewPersonalDetailsAction))
+#6 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(952): sfExecutionFilter->handleAction(Object(sfFilterChain), Object(viewPersonalDetailsAction))
+#7 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfExecutionFilter->execute(Object(sfFilterChain))
+#8 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/filter/sfCommonFilter.class.php(29): sfFilterChain->execute()
+#9 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfCommonFilter->execute(Object(sfFilterChain))
+#10 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/filter/orangehrmPostExecutionFilter.php(22): sfFilterChain->execute()
+#11 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): orangehrmPostExecutionFilter->execute(Object(sfFilterChain))
+#12 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/ModuleFilter.php(56): sfFilterChain->execute()
+#13 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ModuleFilter->execute(Object(sfFilterChain))
+#14 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/authorization/filter/ohrmAuthorizationFilter.php(101): sfFilterChain->execute()
+#15 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ohrmAuthorizationFilter->execute(Object(sfFilterChain))
+#16 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/SessionInfoFetcherFilter.php(67): sfFilterChain->execute()
+#17 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): SessionInfoFetcherFilter->execute(Object(sfFilterChain))
+#18 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/OrangeI18NFilter.php(58): sfFilterChain->execute()
+#19 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): OrangeI18NFilter->execute(Object(sfFilterChain))
+#20 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/ExceptionCatcherFilter.php(26): sfFilterChain->execute()
+#21 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ExceptionCatcherFilter->execute(Object(sfFilterChain))
+#22 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/filter/sfBasicSecurityFilter.class.php(72): sfFilterChain->execute()
+#23 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfBasicSecurityFilter->execute(Object(sfFilterChain))
+#24 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1013): sfFilterChain->execute()
+#25 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfRenderingFilter->execute(Object(sfFilterChain))
+#26 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(687): sfFilterChain->execute()
+#27 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(2782): sfController->forward('pim', 'viewPersonalDet...')
+#28 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/util/sfContext.class.php(173): sfFrontWebController->dispatch()
+#29 /var/www/html/orangehrm/symfony/web/index.php(22): sfContext->dispatch()
+#30 {main}
+[05-Apr-2022 07:18:38 UTC] Empty module and/or action after parsing the URL "/webres_598bd8c4489f52.47381308/themes/default/images/error-btn.png" (/).
+Wed 06 Apr 2022 09:26:35 AM UTC,847 [142144] ERROR filter.ExceptionCatcherFilter - Uncaught Exception: Doctrine_Connection_Mysql_Exception: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '2022-04-06 09:26:35am' for column `orangehrm_db`.`ohrm_employee_event`.`created_date` at row 1 in /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection.php:1090
+Stack trace:
+#0 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection/Statement.php(284): Doctrine_Connection->rethrowException(Object(PDOException), Object(Doctrine_Connection_Statement))
+#1 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection.php(1050): Doctrine_Connection_Statement->execute(Array)
+#2 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection.php(695): Doctrine_Connection->exec('INSERT INTO ohr...', Array)
+#3 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection/UnitOfWork.php(647): Doctrine_Connection->insert(Object(EmployeeEventTable), Array)
+#4 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection/UnitOfWork.php(571): Doctrine_Connection_UnitOfWork->processSingleInsert(Object(EmployeeEvent))
+#5 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection/UnitOfWork.php(81): Doctrine_Connection_UnitOfWork->insert(Object(EmployeeEvent))
+#6 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Record.php(1718): Doctrine_Connection_UnitOfWork->saveGraph(Object(EmployeeEvent))
+#7 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/dao/EmployeeEventDao.php(33): Doctrine_Record->save()
+#8 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/service/EmployeeEventService.php(63): EmployeeEventDao->saveEmployeeEvent(Object(EmployeeEvent))
+#9 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/service/EmployeeEventService.php(84): EmployeeEventService->saveEmployeeEvent(Object(EmployeeEvent))
+#10 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/modules/pim/actions/viewPersonalDetailsAction.class.php(92): EmployeeEventService->saveEvent('4', 'employee', 'UPDATE', 'Updating Employ...', NULL)
+#11 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(971): viewPersonalDetailsAction->execute(Object(sfWebRequest))
+#12 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/filter/orangehrmExecutionFilter.php(42): sfExecutionFilter->executeAction(Object(viewPersonalDetailsAction))
+#13 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(966): orangehrmExecutionFilter->executeAction(Object(viewPersonalDetailsAction))
+#14 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(952): sfExecutionFilter->handleAction(Object(sfFilterChain), Object(viewPersonalDetailsAction))
+#15 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfExecutionFilter->execute(Object(sfFilterChain))
+#16 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/filter/sfCommonFilter.class.php(29): sfFilterChain->execute()
+#17 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfCommonFilter->execute(Object(sfFilterChain))
+#18 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/filter/orangehrmPostExecutionFilter.php(22): sfFilterChain->execute()
+#19 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): orangehrmPostExecutionFilter->execute(Object(sfFilterChain))
+#20 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/ModuleFilter.php(56): sfFilterChain->execute()
+#21 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ModuleFilter->execute(Object(sfFilterChain))
+#22 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/authorization/filter/ohrmAuthorizationFilter.php(101): sfFilterChain->execute()
+#23 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ohrmAuthorizationFilter->execute(Object(sfFilterChain))
+#24 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/SessionInfoFetcherFilter.php(67): sfFilterChain->execute()
+#25 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): SessionInfoFetcherFilter->execute(Object(sfFilterChain))
+#26 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/OrangeI18NFilter.php(58): sfFilterChain->execute()
+#27 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): OrangeI18NFilter->execute(Object(sfFilterChain))
+#28 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/ExceptionCatcherFilter.php(26): sfFilterChain->execute()
+#29 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ExceptionCatcherFilter->execute(Object(sfFilterChain))
+#30 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/filter/sfBasicSecurityFilter.class.php(72): sfFilterChain->execute()
+#31 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfBasicSecurityFilter->execute(Object(sfFilterChain))
+#32 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1013): sfFilterChain->execute()
+#33 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfRenderingFilter->execute(Object(sfFilterChain))
+#34 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(687): sfFilterChain->execute()
+#35 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(2782): sfController->forward('pim', 'viewPersonalDet...')
+#36 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/util/sfContext.class.php(173): sfFrontWebController->dispatch()
+#37 /var/www/html/orangehrm/symfony/web/index.php(22): sfContext->dispatch()
+#38 {main}
+
+Next DaoException: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '2022-04-06 09:26:35am' for column `orangehrm_db`.`ohrm_employee_event`.`created_date` at row 1 in /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/dao/EmployeeEventDao.php:36
+Stack trace:
+#0 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/service/EmployeeEventService.php(63): EmployeeEventDao->saveEmployeeEvent(Object(EmployeeEvent))
+#1 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/service/EmployeeEventService.php(84): EmployeeEventService->saveEmployeeEvent(Object(EmployeeEvent))
+#2 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/modules/pim/actions/viewPersonalDetailsAction.class.php(92): EmployeeEventService->saveEvent('4', 'employee', 'UPDATE', 'Updating Employ...', NULL)
+#3 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(971): viewPersonalDetailsAction->execute(Object(sfWebRequest))
+#4 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/filter/orangehrmExecutionFilter.php(42): sfExecutionFilter->executeAction(Object(viewPersonalDetailsAction))
+#5 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(966): orangehrmExecutionFilter->executeAction(Object(viewPersonalDetailsAction))
+#6 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(952): sfExecutionFilter->handleAction(Object(sfFilterChain), Object(viewPersonalDetailsAction))
+#7 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfExecutionFilter->execute(Object(sfFilterChain))
+#8 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/filter/sfCommonFilter.class.php(29): sfFilterChain->execute()
+#9 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfCommonFilter->execute(Object(sfFilterChain))
+#10 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/filter/orangehrmPostExecutionFilter.php(22): sfFilterChain->execute()
+#11 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): orangehrmPostExecutionFilter->execute(Object(sfFilterChain))
+#12 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/ModuleFilter.php(56): sfFilterChain->execute()
+#13 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ModuleFilter->execute(Object(sfFilterChain))
+#14 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/authorization/filter/ohrmAuthorizationFilter.php(101): sfFilterChain->execute()
+#15 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ohrmAuthorizationFilter->execute(Object(sfFilterChain))
+#16 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/SessionInfoFetcherFilter.php(67): sfFilterChain->execute()
+#17 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): SessionInfoFetcherFilter->execute(Object(sfFilterChain))
+#18 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/OrangeI18NFilter.php(58): sfFilterChain->execute()
+#19 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): OrangeI18NFilter->execute(Object(sfFilterChain))
+#20 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/ExceptionCatcherFilter.php(26): sfFilterChain->execute()
+#21 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ExceptionCatcherFilter->execute(Object(sfFilterChain))
+#22 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/filter/sfBasicSecurityFilter.class.php(72): sfFilterChain->execute()
+#23 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfBasicSecurityFilter->execute(Object(sfFilterChain))
+#24 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1013): sfFilterChain->execute()
+#25 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfRenderingFilter->execute(Object(sfFilterChain))
+#26 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(687): sfFilterChain->execute()
+#27 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(2782): sfController->forward('pim', 'viewPersonalDet...')
+#28 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/util/sfContext.class.php(173): sfFrontWebController->dispatch()
+#29 /var/www/html/orangehrm/symfony/web/index.php(22): sfContext->dispatch()
+#30 {main}
+[06-Apr-2022 09:26:36 UTC] Empty module and/or action after parsing the URL "/webres_598bd8c4489f52.47381308/themes/default/images/error-btn.png" (/).
+Wed 06 Apr 2022 09:42:12 AM UTC,767 [142156] ERROR filter.ExceptionCatcherFilter - Uncaught Exception: Doctrine_Connection_Mysql_Exception: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '2022-04-06 09:42:12am' for column `orangehrm_db`.`ohrm_employee_event`.`created_date` at row 1 in /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection.php:1090
+Stack trace:
+#0 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection/Statement.php(284): Doctrine_Connection->rethrowException(Object(PDOException), Object(Doctrine_Connection_Statement))
+#1 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection.php(1050): Doctrine_Connection_Statement->execute(Array)
+#2 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection.php(695): Doctrine_Connection->exec('INSERT INTO ohr...', Array)
+#3 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection/UnitOfWork.php(647): Doctrine_Connection->insert(Object(EmployeeEventTable), Array)
+#4 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection/UnitOfWork.php(571): Doctrine_Connection_UnitOfWork->processSingleInsert(Object(EmployeeEvent))
+#5 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection/UnitOfWork.php(81): Doctrine_Connection_UnitOfWork->insert(Object(EmployeeEvent))
+#6 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Record.php(1718): Doctrine_Connection_UnitOfWork->saveGraph(Object(EmployeeEvent))
+#7 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/dao/EmployeeEventDao.php(33): Doctrine_Record->save()
+#8 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/service/EmployeeEventService.php(63): EmployeeEventDao->saveEmployeeEvent(Object(EmployeeEvent))
+#9 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/service/EmployeeEventService.php(84): EmployeeEventService->saveEmployeeEvent(Object(EmployeeEvent))
+#10 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/form/EmployeeReportToForm.php(307): EmployeeEventService->saveEvent('6', 'supervisor', 'SAVE', 'Save Employee S...', 'Admin')
+#11 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/modules/pim/actions/updateReportToDetailAction.class.php(74): EmployeeReportToForm->save()
+#12 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(971): updateReportToDetailAction->execute(Object(sfWebRequest))
+#13 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/filter/orangehrmExecutionFilter.php(42): sfExecutionFilter->executeAction(Object(updateReportToDetailAction))
+#14 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(966): orangehrmExecutionFilter->executeAction(Object(updateReportToDetailAction))
+#15 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(952): sfExecutionFilter->handleAction(Object(sfFilterChain), Object(updateReportToDetailAction))
+#16 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfExecutionFilter->execute(Object(sfFilterChain))
+#17 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/filter/sfCommonFilter.class.php(29): sfFilterChain->execute()
+#18 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfCommonFilter->execute(Object(sfFilterChain))
+#19 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/filter/orangehrmPostExecutionFilter.php(22): sfFilterChain->execute()
+#20 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): orangehrmPostExecutionFilter->execute(Object(sfFilterChain))
+#21 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/ModuleFilter.php(56): sfFilterChain->execute()
+#22 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ModuleFilter->execute(Object(sfFilterChain))
+#23 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/authorization/filter/ohrmAuthorizationFilter.php(101): sfFilterChain->execute()
+#24 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ohrmAuthorizationFilter->execute(Object(sfFilterChain))
+#25 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/SessionInfoFetcherFilter.php(67): sfFilterChain->execute()
+#26 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): SessionInfoFetcherFilter->execute(Object(sfFilterChain))
+#27 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/OrangeI18NFilter.php(58): sfFilterChain->execute()
+#28 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): OrangeI18NFilter->execute(Object(sfFilterChain))
+#29 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/ExceptionCatcherFilter.php(26): sfFilterChain->execute()
+#30 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ExceptionCatcherFilter->execute(Object(sfFilterChain))
+#31 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/filter/sfBasicSecurityFilter.class.php(72): sfFilterChain->execute()
+#32 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfBasicSecurityFilter->execute(Object(sfFilterChain))
+#33 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1013): sfFilterChain->execute()
+#34 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfRenderingFilter->execute(Object(sfFilterChain))
+#35 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(687): sfFilterChain->execute()
+#36 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(2782): sfController->forward('pim', 'updateReportToD...')
+#37 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/util/sfContext.class.php(173): sfFrontWebController->dispatch()
+#38 /var/www/html/orangehrm/symfony/web/index.php(22): sfContext->dispatch()
+#39 {main}
+
+Next DaoException: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '2022-04-06 09:42:12am' for column `orangehrm_db`.`ohrm_employee_event`.`created_date` at row 1 in /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/dao/EmployeeEventDao.php:36
+Stack trace:
+#0 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/service/EmployeeEventService.php(63): EmployeeEventDao->saveEmployeeEvent(Object(EmployeeEvent))
+#1 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/service/EmployeeEventService.php(84): EmployeeEventService->saveEmployeeEvent(Object(EmployeeEvent))
+#2 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/form/EmployeeReportToForm.php(307): EmployeeEventService->saveEvent('6', 'supervisor', 'SAVE', 'Save Employee S...', 'Admin')
+#3 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/modules/pim/actions/updateReportToDetailAction.class.php(74): EmployeeReportToForm->save()
+#4 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(971): updateReportToDetailAction->execute(Object(sfWebRequest))
+#5 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/filter/orangehrmExecutionFilter.php(42): sfExecutionFilter->executeAction(Object(updateReportToDetailAction))
+#6 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(966): orangehrmExecutionFilter->executeAction(Object(updateReportToDetailAction))
+#7 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(952): sfExecutionFilter->handleAction(Object(sfFilterChain), Object(updateReportToDetailAction))
+#8 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfExecutionFilter->execute(Object(sfFilterChain))
+#9 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/filter/sfCommonFilter.class.php(29): sfFilterChain->execute()
+#10 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfCommonFilter->execute(Object(sfFilterChain))
+#11 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/filter/orangehrmPostExecutionFilter.php(22): sfFilterChain->execute()
+#12 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): orangehrmPostExecutionFilter->execute(Object(sfFilterChain))
+#13 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/ModuleFilter.php(56): sfFilterChain->execute()
+#14 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ModuleFilter->execute(Object(sfFilterChain))
+#15 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/authorization/filter/ohrmAuthorizationFilter.php(101): sfFilterChain->execute()
+#16 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ohrmAuthorizationFilter->execute(Object(sfFilterChain))
+#17 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/SessionInfoFetcherFilter.php(67): sfFilterChain->execute()
+#18 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): SessionInfoFetcherFilter->execute(Object(sfFilterChain))
+#19 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/OrangeI18NFilter.php(58): sfFilterChain->execute()
+#20 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): OrangeI18NFilter->execute(Object(sfFilterChain))
+#21 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/ExceptionCatcherFilter.php(26): sfFilterChain->execute()
+#22 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ExceptionCatcherFilter->execute(Object(sfFilterChain))
+#23 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/filter/sfBasicSecurityFilter.class.php(72): sfFilterChain->execute()
+#24 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfBasicSecurityFilter->execute(Object(sfFilterChain))
+#25 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1013): sfFilterChain->execute()
+#26 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfRenderingFilter->execute(Object(sfFilterChain))
+#27 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(687): sfFilterChain->execute()
+#28 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(2782): sfController->forward('pim', 'updateReportToD...')
+#29 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/util/sfContext.class.php(173): sfFrontWebController->dispatch()
+#30 /var/www/html/orangehrm/symfony/web/index.php(22): sfContext->dispatch()
+#31 {main}
+[06-Apr-2022 09:42:13 UTC] Empty module and/or action after parsing the URL "/webres_598bd8c4489f52.47381308/themes/default/images/error-btn.png" (/).
+Wed 06 Apr 2022 09:43:15 AM UTC,239 [137194] ERROR filter.ExceptionCatcherFilter - Uncaught Exception: Doctrine_Connection_Mysql_Exception: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '2022-04-06 09:43:15am' for column `orangehrm_db`.`ohrm_employee_event`.`created_date` at row 1 in /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection.php:1090
+Stack trace:
+#0 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection/Statement.php(284): Doctrine_Connection->rethrowException(Object(PDOException), Object(Doctrine_Connection_Statement))
+#1 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection.php(1050): Doctrine_Connection_Statement->execute(Array)
+#2 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection.php(695): Doctrine_Connection->exec('INSERT INTO ohr...', Array)
+#3 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection/UnitOfWork.php(647): Doctrine_Connection->insert(Object(EmployeeEventTable), Array)
+#4 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection/UnitOfWork.php(571): Doctrine_Connection_UnitOfWork->processSingleInsert(Object(EmployeeEvent))
+#5 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Connection/UnitOfWork.php(81): Doctrine_Connection_UnitOfWork->insert(Object(EmployeeEvent))
+#6 /var/www/html/orangehrm/symfony/lib/vendor/lexpress/doctrine1/lib/Doctrine/Record.php(1718): Doctrine_Connection_UnitOfWork->saveGraph(Object(EmployeeEvent))
+#7 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/dao/EmployeeEventDao.php(33): Doctrine_Record->save()
+#8 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/service/EmployeeEventService.php(63): EmployeeEventDao->saveEmployeeEvent(Object(EmployeeEvent))
+#9 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/service/EmployeeEventService.php(84): EmployeeEventService->saveEmployeeEvent(Object(EmployeeEvent))
+#10 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/form/EmployeeReportToForm.php(294): EmployeeEventService->saveEvent('6', 'supervisor', 'UPDATE', 'Updating Employ...', 'Admin')
+#11 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/modules/pim/actions/updateReportToDetailAction.class.php(74): EmployeeReportToForm->save()
+#12 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(971): updateReportToDetailAction->execute(Object(sfWebRequest))
+#13 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/filter/orangehrmExecutionFilter.php(42): sfExecutionFilter->executeAction(Object(updateReportToDetailAction))
+#14 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(966): orangehrmExecutionFilter->executeAction(Object(updateReportToDetailAction))
+#15 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(952): sfExecutionFilter->handleAction(Object(sfFilterChain), Object(updateReportToDetailAction))
+#16 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfExecutionFilter->execute(Object(sfFilterChain))
+#17 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/filter/sfCommonFilter.class.php(29): sfFilterChain->execute()
+#18 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfCommonFilter->execute(Object(sfFilterChain))
+#19 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/filter/orangehrmPostExecutionFilter.php(22): sfFilterChain->execute()
+#20 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): orangehrmPostExecutionFilter->execute(Object(sfFilterChain))
+#21 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/ModuleFilter.php(56): sfFilterChain->execute()
+#22 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ModuleFilter->execute(Object(sfFilterChain))
+#23 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/authorization/filter/ohrmAuthorizationFilter.php(101): sfFilterChain->execute()
+#24 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ohrmAuthorizationFilter->execute(Object(sfFilterChain))
+#25 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/SessionInfoFetcherFilter.php(67): sfFilterChain->execute()
+#26 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): SessionInfoFetcherFilter->execute(Object(sfFilterChain))
+#27 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/OrangeI18NFilter.php(58): sfFilterChain->execute()
+#28 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): OrangeI18NFilter->execute(Object(sfFilterChain))
+#29 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/ExceptionCatcherFilter.php(26): sfFilterChain->execute()
+#30 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ExceptionCatcherFilter->execute(Object(sfFilterChain))
+#31 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/filter/sfBasicSecurityFilter.class.php(72): sfFilterChain->execute()
+#32 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfBasicSecurityFilter->execute(Object(sfFilterChain))
+#33 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1013): sfFilterChain->execute()
+#34 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfRenderingFilter->execute(Object(sfFilterChain))
+#35 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(687): sfFilterChain->execute()
+#36 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(2782): sfController->forward('pim', 'updateReportToD...')
+#37 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/util/sfContext.class.php(173): sfFrontWebController->dispatch()
+#38 /var/www/html/orangehrm/symfony/web/index.php(22): sfContext->dispatch()
+#39 {main}
+
+Next DaoException: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '2022-04-06 09:43:15am' for column `orangehrm_db`.`ohrm_employee_event`.`created_date` at row 1 in /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/dao/EmployeeEventDao.php:36
+Stack trace:
+#0 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/service/EmployeeEventService.php(63): EmployeeEventDao->saveEmployeeEvent(Object(EmployeeEvent))
+#1 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/service/EmployeeEventService.php(84): EmployeeEventService->saveEmployeeEvent(Object(EmployeeEvent))
+#2 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/lib/form/EmployeeReportToForm.php(294): EmployeeEventService->saveEvent('6', 'supervisor', 'UPDATE', 'Updating Employ...', 'Admin')
+#3 /var/www/html/orangehrm/symfony/plugins/orangehrmPimPlugin/modules/pim/actions/updateReportToDetailAction.class.php(74): EmployeeReportToForm->save()
+#4 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(971): updateReportToDetailAction->execute(Object(sfWebRequest))
+#5 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/filter/orangehrmExecutionFilter.php(42): sfExecutionFilter->executeAction(Object(updateReportToDetailAction))
+#6 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(966): orangehrmExecutionFilter->executeAction(Object(updateReportToDetailAction))
+#7 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(952): sfExecutionFilter->handleAction(Object(sfFilterChain), Object(updateReportToDetailAction))
+#8 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfExecutionFilter->execute(Object(sfFilterChain))
+#9 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/filter/sfCommonFilter.class.php(29): sfFilterChain->execute()
+#10 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfCommonFilter->execute(Object(sfFilterChain))
+#11 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/filter/orangehrmPostExecutionFilter.php(22): sfFilterChain->execute()
+#12 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): orangehrmPostExecutionFilter->execute(Object(sfFilterChain))
+#13 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/ModuleFilter.php(56): sfFilterChain->execute()
+#14 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ModuleFilter->execute(Object(sfFilterChain))
+#15 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/authorization/filter/ohrmAuthorizationFilter.php(101): sfFilterChain->execute()
+#16 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ohrmAuthorizationFilter->execute(Object(sfFilterChain))
+#17 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/SessionInfoFetcherFilter.php(67): sfFilterChain->execute()
+#18 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): SessionInfoFetcherFilter->execute(Object(sfFilterChain))
+#19 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/OrangeI18NFilter.php(58): sfFilterChain->execute()
+#20 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): OrangeI18NFilter->execute(Object(sfFilterChain))
+#21 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/ExceptionCatcherFilter.php(26): sfFilterChain->execute()
+#22 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ExceptionCatcherFilter->execute(Object(sfFilterChain))
+#23 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/filter/sfBasicSecurityFilter.class.php(72): sfFilterChain->execute()
+#24 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfBasicSecurityFilter->execute(Object(sfFilterChain))
+#25 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1013): sfFilterChain->execute()
+#26 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfRenderingFilter->execute(Object(sfFilterChain))
+#27 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(687): sfFilterChain->execute()
+#28 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(2782): sfController->forward('pim', 'updateReportToD...')
+#29 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/util/sfContext.class.php(173): sfFrontWebController->dispatch()
+#30 /var/www/html/orangehrm/symfony/web/index.php(22): sfContext->dispatch()
+#31 {main}
+[06-Apr-2022 13:11:36 UTC] Empty module and/or action after parsing the URL "/webres_598bd8c4489f52.47381308/js/jquery/jquery.form" (/).
+[06-Apr-2022 13:11:44 UTC] Empty module and/or action after parsing the URL "/webres_598bd8c4489f52.47381308/js/jquery/jquery.form" (/).
+[06-Apr-2022 13:11:55 UTC] Empty module and/or action after parsing the URL "/webres_598bd8c4489f52.47381308/js/jquery/jquery.form" (/).
+[06-Apr-2022 13:12:05 UTC] Empty module and/or action after parsing the URL "/webres_598bd8c4489f52.47381308/js/jquery/jquery.form" (/).
+[06-Apr-2022 13:12:16 UTC] Empty module and/or action after parsing the URL "/webres_598bd8c4489f52.47381308/js/jquery/jquery.form" (/).
+[06-Apr-2022 13:12:51 UTC] Empty module and/or action after parsing the URL "/webres_598bd8c4489f52.47381308/js/jquery/jquery.form" (/).
+[06-Apr-2022 13:13:01 UTC] Empty module and/or action after parsing the URL "/webres_598bd8c4489f52.47381308/js/jquery/jquery.form" (/).
+[06-Apr-2022 13:13:29 UTC] Empty module and/or action after parsing the URL "/webres_598bd8c4489f52.47381308/js/jquery/jquery.form" (/).
+Wed 06 Apr 2022 01:29:10 PM UTC,958 [142143] ERROR filter.ExceptionCatcherFilter - Uncaught Exception: ServiceException: Leave Period Start date is not defined in /var/www/html/orangehrm/symfony/plugins/orangehrmLeavePlugin/lib/service/LeavePeriodService.php:315
+Stack trace:
+#0 /var/www/html/orangehrm/symfony/plugins/orangehrmLeavePlugin/lib/service/LeavePeriodService.php(369): LeavePeriodService->getGeneratedLeavePeriodList(NULL, false)
+#1 /var/www/html/orangehrm/symfony/plugins/orangehrmLeavePlugin/lib/entitlement/FIFOEntitlementConsumptionStrategy.php(706): LeavePeriodService->getCurrentLeavePeriodByDate('2022-04-06')
+#2 /var/www/html/orangehrm/symfony/plugins/orangehrmLeavePlugin/lib/service/LeaveEntitlementService.php(170): FIFOEntitlementConsumptionStrategy->getLeavePeriod('2022-04-06', '6', 'undefined')
+#3 /var/www/html/orangehrm/symfony/plugins/orangehrmLeavePlugin/modules/leave/actions/getLeaveBalanceAjaxAction.class.php(177): LeaveEntitlementService->getLeaveBalance('6', 'undefined', '2022-04-06', NULL)
+#4 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(971): getLeaveBalanceAjaxAction->execute(Object(sfWebRequest))
+#5 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/filter/orangehrmExecutionFilter.php(42): sfExecutionFilter->executeAction(Object(getLeaveBalanceAjaxAction))
+#6 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(966): orangehrmExecutionFilter->executeAction(Object(getLeaveBalanceAjaxAction))
+#7 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(952): sfExecutionFilter->handleAction(Object(sfFilterChain), Object(getLeaveBalanceAjaxAction))
+#8 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfExecutionFilter->execute(Object(sfFilterChain))
+#9 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/filter/sfCommonFilter.class.php(29): sfFilterChain->execute()
+#10 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfCommonFilter->execute(Object(sfFilterChain))
+#11 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/filter/orangehrmPostExecutionFilter.php(22): sfFilterChain->execute()
+#12 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): orangehrmPostExecutionFilter->execute(Object(sfFilterChain))
+#13 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/ModuleFilter.php(56): sfFilterChain->execute()
+#14 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ModuleFilter->execute(Object(sfFilterChain))
+#15 /var/www/html/orangehrm/symfony/plugins/orangehrmCorePlugin/lib/authorization/filter/ohrmAuthorizationFilter.php(101): sfFilterChain->execute()
+#16 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ohrmAuthorizationFilter->execute(Object(sfFilterChain))
+#17 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/SessionInfoFetcherFilter.php(67): sfFilterChain->execute()
+#18 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): SessionInfoFetcherFilter->execute(Object(sfFilterChain))
+#19 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/OrangeI18NFilter.php(58): sfFilterChain->execute()
+#20 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): OrangeI18NFilter->execute(Object(sfFilterChain))
+#21 /var/www/html/orangehrm/symfony/apps/orangehrm/lib/filter/ExceptionCatcherFilter.php(26): sfFilterChain->execute()
+#22 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): ExceptionCatcherFilter->execute(Object(sfFilterChain))
+#23 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/filter/sfBasicSecurityFilter.class.php(72): sfFilterChain->execute()
+#24 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfBasicSecurityFilter->execute(Object(sfFilterChain))
+#25 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1013): sfFilterChain->execute()
+#26 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(1048): sfRenderingFilter->execute(Object(sfFilterChain))
+#27 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(687): sfFilterChain->execute()
+#28 /var/www/html/orangehrm/symfony/cache/orangehrm/prod/config/config_core_compile.yml.php(2782): sfController->forward('leave', 'getLeaveBalance...')
+#29 /var/www/html/orangehrm/symfony/lib/vendor/symfony/lib/util/sfContext.class.php(173): sfFrontWebController->dispatch()
+#30 /var/www/html/orangehrm/symfony/web/index.php(22): sfContext->dispatch()
+#31 {main}
+[06-Apr-2022 13:37:07 UTC] Empty module and/or action after parsing the URL "/webres_598bd8c4489f52.47381308/orangehrmAdminPlugin/css/viewEducationSuccess.css" (/).
+Wed 06 Apr 2022 01:40:09 PM UTC,188 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:40:09 PM UTC,200 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:40:09 PM UTC,205 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:40:09 PM UTC,211 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:40:09 PM UTC,216 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:40:09 PM UTC,222 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:40:09 PM UTC,237 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:40:09 PM UTC,245 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:40:09 PM UTC,250 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:40:09 PM UTC,255 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:40:09 PM UTC,261 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:40:09 PM UTC,276 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:40:09 PM UTC,282 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:40:09 PM UTC,287 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:40:09 PM UTC,292 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:40:09 PM UTC,297 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:41:21 PM UTC,219 [137194] WARN core.email - Email configuration settings not available
+Wed 06 Apr 2022 01:41:21 PM UTC,779 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:41:21 PM UTC,793 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:41:21 PM UTC,797 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:41:21 PM UTC,802 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:41:21 PM UTC,805 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:41:21 PM UTC,809 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:41:21 PM UTC,819 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:41:21 PM UTC,823 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:41:21 PM UTC,826 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:41:21 PM UTC,830 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:41:21 PM UTC,833 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:41:21 PM UTC,844 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:41:21 PM UTC,847 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:41:21 PM UTC,850 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:41:21 PM UTC,855 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:41:21 PM UTC,859 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:43:29 PM UTC,946 [137193] WARN core.email - Email configuration settings not available
+Wed 06 Apr 2022 01:46:31 PM UTC,522 [152848] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:31 PM UTC,525 [152848] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:31 PM UTC,529 [152848] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:31 PM UTC,539 [152848] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:31 PM UTC,542 [152848] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:31 PM UTC,546 [152848] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:31 PM UTC,549 [152848] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:31 PM UTC,553 [152848] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:31 PM UTC,565 [152848] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:31 PM UTC,568 [152848] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:31 PM UTC,572 [152848] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:31 PM UTC,575 [152848] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:31 PM UTC,579 [152848] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:31 PM UTC,589 [152848] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:31 PM UTC,592 [152848] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:31 PM UTC,596 [152848] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:31 PM UTC,599 [152848] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:31 PM UTC,604 [152848] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:31 PM UTC,616 [152848] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:31 PM UTC,620 [152848] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:31 PM UTC,624 [152848] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:31 PM UTC,627 [152848] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:47 PM UTC,440 [137192] WARN core.email - Email configuration settings not available
+Wed 06 Apr 2022 01:46:48 PM UTC,006 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:48 PM UTC,010 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:48 PM UTC,013 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:48 PM UTC,024 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:48 PM UTC,027 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:48 PM UTC,031 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:48 PM UTC,034 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:48 PM UTC,038 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:48 PM UTC,049 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:48 PM UTC,053 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:48 PM UTC,056 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:48 PM UTC,059 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:48 PM UTC,062 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:48 PM UTC,072 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:48 PM UTC,076 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:48 PM UTC,079 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:48 PM UTC,082 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:48 PM UTC,086 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:48 PM UTC,096 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:48 PM UTC,099 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:48 PM UTC,102 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:46:48 PM UTC,106 [137195] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:48:25 PM UTC,416 [137194] WARN core.email - Email configuration settings not available
+Wed 06 Apr 2022 01:48:50 PM UTC,799 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:48:50 PM UTC,812 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:48:50 PM UTC,816 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:48:50 PM UTC,820 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:48:50 PM UTC,824 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:48:50 PM UTC,829 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:48:50 PM UTC,840 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:48:50 PM UTC,843 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:48:50 PM UTC,849 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:48:50 PM UTC,853 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:48:50 PM UTC,856 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:48:50 PM UTC,866 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:48:50 PM UTC,869 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:48:50 PM UTC,873 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:48:50 PM UTC,877 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:48:50 PM UTC,880 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:48:50 PM UTC,891 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:48:50 PM UTC,894 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:48:50 PM UTC,898 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:48:50 PM UTC,901 [137192] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:49:23 PM UTC,086 [142144] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:49:23 PM UTC,091 [142144] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:49:23 PM UTC,097 [142144] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:49:28 PM UTC,693 [152462] WARN core.email - Email configuration settings not available
+Wed 06 Apr 2022 01:49:29 PM UTC,235 [142150] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:49:29 PM UTC,239 [142150] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Wed 06 Apr 2022 01:49:29 PM UTC,243 [142150] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+[06-Apr-2022 14:29:11 UTC] Empty module and/or action after parsing the URL "/webres_598bd8c4489f52.47381308/js/jquery/jquery.form" (/).
+[06-Apr-2022 14:30:10 UTC] Empty module and/or action after parsing the URL "/webres_598bd8c4489f52.47381308/orangehrmAdminPlugin/css/viewEducationSuccess.css" (/).
+Tue 12 Apr 2022 10:48:33 AM UTC,561 [268574] WARN filter.ohrmAuthorizationFilter - User does not have access read access to recruitment - viewRecruitmentModule
+Tue 12 Apr 2022 10:48:48 AM UTC,574 [279291] WARN filter.ohrmAuthorizationFilter - User does not have access read access to pim - viewEmployeeList
+Tue 12 Apr 2022 10:49:01 AM UTC,204 [279374] WARN filter.ohrmAuthorizationFilter - User does not have access read access to pim - viewPimModule
+Tue 12 Apr 2022 10:49:04 AM UTC,390 [279374] WARN filter.ohrmAuthorizationFilter - User does not have access read access to pim - viewPimModule
+Tue 12 Apr 2022 10:49:07 AM UTC,016 [278998] WARN filter.ohrmAuthorizationFilter - User does not have access read access to admin - viewAdminModule
+Tue 12 Apr 2022 10:53:05 AM UTC,351 [279292] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Tue 12 Apr 2022 10:53:05 AM UTC,356 [279292] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Tue 12 Apr 2022 10:53:05 AM UTC,360 [279292] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Tue 12 Apr 2022 10:53:05 AM UTC,364 [279292] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Tue 12 Apr 2022 10:53:05 AM UTC,377 [279292] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Tue 12 Apr 2022 10:53:30 AM UTC,366 [280243] WARN core.email - Email configuration settings not available
+Tue 12 Apr 2022 10:53:30 AM UTC,680 [269435] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Tue 12 Apr 2022 10:53:30 AM UTC,683 [269435] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Tue 12 Apr 2022 10:53:30 AM UTC,686 [269435] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Tue 12 Apr 2022 10:53:30 AM UTC,689 [269435] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!
+Tue 12 Apr 2022 10:53:30 AM UTC,698 [269435] ERROR leave.LeaveApplicationService - No workflow item found for APPLY leave action!

@@ -1,0 +1,50 @@
+Client Info
+
+User Agent : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36 OPR/85.0.4341.28
+Remote Address : 102.89.33.25
+
+Server Info
+
+Host : 137.184.150.156
+PHP Version : 7.1.33-44+ubuntu20.04.1+deb.sury.org+1
+Server : Apache/2.4.41 (Ubuntu)
+Admin : admin@example.com
+
+Document Root : /var/www/html/orangehrm
+ROOT_PATH : /var/www/html/orangehrm
+
+OrangeHRM Installation Log
+
+Sat, 02 Apr 2022 11:55:45 +0000 DB Creation - Starting
+Sat, 02 Apr 2022 11:55:45 +0000 DB Creation - Done
+Sat, 02 Apr 2022 11:55:45 +0000 DB Creation - No Errors
+Sat, 02 Apr 2022 11:55:47 +0000 Fill Data Phase 1 - Starting
+Sat, 02 Apr 2022 11:55:47 +0000 Fill Data Phase 1 - Connected to the DB Server
+Sat, 02 Apr 2022 11:55:47 +0000 Fill Data Phase 1 - Selected the DB
+Sat, 02 Apr 2022 11:55:47 +0000 Fill Data Phase 1 - Reading DB Script
+Sat, 02 Apr 2022 11:55:47 +0000 Fill Data Phase 1 - Opened DB Script
+Sat, 02 Apr 2022 11:55:47 +0000 Fill Data Phase 1 - Read DB script
+Sat, 02 Apr 2022 11:55:47 +0000 Fill Data Phase 1 - There are 285 Statements in the DB script
+Sat, 02 Apr 2022 11:55:52 +0000 MySQL Procedure Error:No database selected
+Sat, 02 Apr 2022 11:55:52 +0000 Fill Data Phase 1 - Done
+Sat, 02 Apr 2022 11:55:52 +0000 Fill Data Phase 1 - No Errors
+Sat, 02 Apr 2022 11:55:54 +0000 Fill Data Phase 2 - Starting
+Sat, 02 Apr 2022 11:55:54 +0000 Fill Data Phase 2 - Connected to the DB Server
+Sat, 02 Apr 2022 11:55:54 +0000 Fill Data Phase 2 - Selected the DB
+Sat, 02 Apr 2022 11:55:54 +0000 Fill Data Phase 2 - Reading DB Script
+Sat, 02 Apr 2022 11:55:54 +0000 Fill Data Phase 2 - Opened DB Script
+Sat, 02 Apr 2022 11:55:54 +0000 Fill Data Phase 2 - Read DB script
+Sat, 02 Apr 2022 11:55:54 +0000 Fill Data Phase 2 - There are 134 Statements in the DB script
+Sat, 02 Apr 2022 11:55:55 +0000 MySQL Event Error:No database selected
+Sat, 02 Apr 2022 11:55:55 +0000 Fill Data Phase 1 - Connected to the DB Server
+Sat, 02 Apr 2022 11:55:55 +0000 Fill Data Phase 2 - Done
+Sat, 02 Apr 2022 11:55:55 +0000 Fill Data Phase 2 - No Errors
+Sat, 02 Apr 2022 11:55:57 +0000 Create DB user - Starting
+Sat, 02 Apr 2022 11:55:57 +0000 Create DB user - Done
+Sat, 02 Apr 2022 11:55:57 +0000 Create DB user - No Errors
+Sat, 02 Apr 2022 11:56:00 +0000 Create OrangeHRM user - Starting
+Sat, 02 Apr 2022 11:56:00 +0000 Create OrangeHRM user - Done
+Sat, 02 Apr 2022 11:56:00 +0000 Create OrangeHRM user - No Errors
+Sat, 02 Apr 2022 11:56:02 +0000 Write Conf - Starting
+Sat, 02 Apr 2022 11:56:02 +0000 Write Conf - Done
+Sat, 02 Apr 2022 11:56:02 +0000 Write Conf - No Errors
